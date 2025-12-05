@@ -1,30 +1,25 @@
 {
-  "private": true,
-  "type": "module",
+  "name": "@substrate-system/constants",
   "version": "0.0.0",
-  "main": "dist/index.js",
-  "files": [
-    "./dist/*"
-  ],
+  "description": "Constants for the frontend",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
     "./*": {
-      "import": [
-        "./dist/*.js",
-        "./dist/*"
-      ],
-      "require": [
-        "./dist/*.cjs",
-        "./dist/*"
-      ]
+      "import": "./dist/*.js",
+      "require": "./dist/*.cjs"
     }
   },
+  "main": "dist/index.js",
+  "files": [
+    "./dist/*"
+  ],
   "scripts": {
     "lint": "eslint \"./**/*.{ts,js}\"",
-    "test": "npm run build && esbuild ./test/index.ts --bundle | tapout",
+    "test": "esbuild ./test/index.ts --bundle | tapout",
     "build-cjs": "esbuild src/*.ts --format=cjs --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --out-extension:.js=.cjs --sourcemap",
     "build-cjs:min": "esbuild src/*.ts --format=cjs --minify --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --out-extension:.js=.min.cjs --sourcemap",
     "build-esm": "esbuild src/*.ts --format=esm --metafile=dist/meta.json --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --sourcemap && tsc --emitDeclarationOnly --project tsconfig.build.json --outDir dist",
@@ -39,7 +34,6 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
   "devDependencies": {
     "@preact/preset-vite": "^2.10.2",
     "@substrate-system/debug": "^0.9.24",
@@ -51,15 +45,29 @@
     "esbuild": "^0.27.0",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
-    "htm": "^3.1.1",
     "markdown-toc": "^1.2.0",
     "postcss-nesting": "^13.0.2",
-    "preact": "^10.27.0",
     "tap-spec": "^5.0.0",
     "typedoc": "^0.28.9",
-    "typescript": "^5.9.2",
-    "vite": "^7.0.6"
+    "typescript": "^5.9.2"
   },
-  "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)",
-  "license": "SEE LICENSE IN LICENSE"
+  "keywords": [
+    "constants",
+    "em",
+    "dash"
+  ],
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "homepage": "https://github.com/substrate-system/constants#readme",
+  "bugs": {
+    "url": "https://github.com/substrate-system/constants/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/substrate-system/constants.git"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)"
 }

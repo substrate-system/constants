@@ -13,7 +13,19 @@
 Constants for the frontend.
 
 <details><summary><h2>Contents</h2></summary>
+
 <!-- toc -->
+
+- [Install](#install)
+- [API](#api)
+  * [ESM](#esm)
+  * [Common JS](#common-js)
+- [Use](#use)
+  * [JS](#js)
+  * [pre-built JS](#pre-built-js)
+
+<!-- tocstop -->
+
 </details>
 
 ## Install

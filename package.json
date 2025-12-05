@@ -1,6 +1,6 @@
 {
   "name": "@substrate-system/constants",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Constants for the frontend",
   "type": "module",
   "exports": {
